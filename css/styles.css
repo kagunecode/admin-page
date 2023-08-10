@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;700&family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+    --background-color: white;
+    --text-color: black;
+    --text-color-bg: white;
+    --sidebar-background: rgb(231, 111, 81);
+    --focus-color: rgb(42, 157, 143);
+    --bar-background: rgba(42, 157, 143, 0.2);
+
+    font-family: 'REM', sans-serif;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100dvh;
+    grid-template-columns: 1fr 4fr;
+}
+
+body.dark {
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar {
+    display: grid;
+    background-color: var(--sidebar-background);
+    grid-template-rows: 1fr 4fr 6fr;
+    grid-row: 1 / -1;
+    padding: 1em;
+    gap: 3em;
+    font-size: 1.4rem;
+    color: var(--text-color-bg);
+    z-index: 1;
+    box-shadow: 0 4px 8px -2px gray;
+}
+
+.sidebar-item {
+    margin-bottom: .7em;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.logo {
+    font-size: 2.5rem;
+
+}
+
+.bi-layout-wtf {
+    margin-right: .3em;
+}
+
+.navbar {
+    box-shadow: 0 4px 20px -2px gray;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    padding: 1em 3em;
+    align-items: center;
+}
+
+input {
+    border-radius: .8em;
+    border: none;
+    width: 90%;
+    height: 1.5em;
+    padding: .3em;
+    background-color: var(--bar-background);
+    margin-left: .5em;
+}
+
+.right-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr;    
+    font-size: 1.3rem;
+    gap: 2em;
+    justify-self: end;
+}
+
+.top-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2em;
+}
+
+.top-button {
+    background-color: var(--bar-background);
+    border: none;
+    font-weight: bold;
+    border-radius: 1em;
+    padding: 1em 1.5em;
+    transition-duration: 0.3s;
+}
+
+.top-button:hover {
+    cursor: pointer;
+    background-color: var(--focus-color);
+}
+
+.user-welcome {
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+    grid-auto-rows: 1fr 1fr;
+    gap: 0 1em;
+    font-size: .9rem;
+    align-items: end;
+}
+
+.user-welcome > .bi {
+    grid-row: 1 / 3;
+    font-size: 3rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.username {
+    font-size: .7rem;
+    font-weight: bold;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.username > * {
+    margin: 0;
+}
+
+.username p {
+    font-size: .9rem;
+    font-weight: 200;
+}
