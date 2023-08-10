@@ -5,9 +5,10 @@ body {
     --background-color: white;
     --text-color: black;
     --text-color-bg: white;
-    --sidebar-background: rgb(231, 111, 81);
-    --focus-color: rgb(42, 157, 143);
-    --bar-background: rgba(42, 157, 143, 0.2);
+    --sidebar-background: #9F91CC;
+    --focus-color: #5C4B99;
+    --bar-background: rgba(159, 145, 204, 0.4);
+    --main-container-background: rgba(49, 49, 49, 0.07);
 
     font-family: 'REM', sans-serif;
 
@@ -43,6 +44,11 @@ a {
 
 .sidebar-item {
     margin-bottom: .7em;
+    transition-duration: 0.3s;
+}
+
+.sidebar-item:hover {
+    margin-left: 1em;
 }
 
 .container {
@@ -73,7 +79,7 @@ input {
     border: none;
     width: 90%;
     height: 1.5em;
-    padding: .3em;
+    padding: .6em;
     background-color: var(--bar-background);
     margin-left: .5em;
 }
@@ -99,11 +105,13 @@ input {
     border-radius: 1em;
     padding: 1em 1.5em;
     transition-duration: 0.3s;
+    color: var(--text-color);
 }
 
 .top-button:hover {
     cursor: pointer;
     background-color: var(--focus-color);
+    color: var(--text-color-bg);
 }
 
 .user-welcome {
@@ -136,4 +144,8 @@ input {
 .username p {
     font-size: .9rem;
     font-weight: 200;
+}
+
+.main-container {
+    background-color: var(--main-container-background);    
 }
