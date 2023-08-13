@@ -147,5 +147,51 @@ input {
 }
 
 .main-container {
+    display: grid;
     background-color: var(--main-container-background);    
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: start;
+    justify-items: start;
+    padding: 2em;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    align-self: end;
+    margin-bottom: .6em;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr 3fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1 / -1;
+    height: 100%;
+    width: 100%;
+}
+
+.cards-container .section-title {
+    grid-column: 1 / -1;
+}
+
+.card {
+    width: 90%;
+    height: 90%;
+    background-color: var(--background-color);
+    border-radius: 1em;
+    box-shadow: 0 4px 5px -2px gray;
+    display: grid;
+    grid-template-columns: 1fr 30fr;
+}
+
+.card-color {
+    background-color: var(--bar-background);    
+    border-radius: 1em 0em 0em 1em;
+    transition-duration: 0.3s;
+}
+
+.card:hover .card-color {
+    background-color: var(--focus-color);
 }
