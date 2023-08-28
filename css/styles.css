@@ -165,7 +165,7 @@ input {
 
 .cards-container {
     display: grid;
-    grid-template-rows: 1fr 3fr 3fr 3fr;
+    grid-template-rows: 0.5fr 3fr 3fr 3fr;
     grid-template-columns: 1fr 1fr;
     grid-row: 1 / -1;
     height: 100%;
@@ -173,6 +173,7 @@ input {
 }
 
 .cards-container .section-title {
+    font-size: 1.7rem;
     grid-column: 1 / -1;
 }
 
@@ -184,14 +185,44 @@ input {
     box-shadow: 0 4px 5px -2px gray;
     display: grid;
     grid-template-columns: 1fr 30fr;
+    grid-template-rows: 2fr 1fr;
 }
 
 .card-color {
     background-color: var(--bar-background);    
     border-radius: 1em 0em 0em 1em;
     transition-duration: 0.3s;
+    grid-row: 1 / -1;
 }
 
 .card:hover .card-color {
     background-color: var(--focus-color);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem ;
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-icons {
+    display: grid;
+    font-size: 1.4rem;
+    align-self: center;
+    justify-self: end;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1rem);
+}
+
+.card-icons:hover {
+    cursor: pointer;
 }
