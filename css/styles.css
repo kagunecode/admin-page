@@ -2,6 +2,7 @@
 
 
 body {
+    --body-color: white;
     --background-color: white;
     --text-color: black;
     --text-color-bg: white;
@@ -9,19 +10,29 @@ body {
     --focus-color: #5C4B99;
     --bar-background: rgba(159, 145, 204, 0.4);
     --main-container-background: rgba(49, 49, 49, 0.07);
+    --box-shadow: 0 4px 8px -2px gray;
+
 
     font-family: 'REM', sans-serif;
-
-    background-color: var(--background-color);
+    background-color: var(--body-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     display: grid;
     height: 100dvh;
     grid-template-columns: 1fr 6fr;
+    transition-duration: 0.3s;
 }
 
-body.dark {}
+body.dark {
+    --body-color: #2A282A;
+    --text-color: white;
+    --background-color: #454545;
+    --box-shadow: #454545;
+    --sidebar-background: #6B59A7;
+    --focus-color: #9073EC;
+    --bar-background: rgba(144, 115, 236, 0.5);
+}
 
 a {
     text-decoration: none;
@@ -38,7 +49,7 @@ a {
     font-size: 1.4rem;
     color: var(--text-color-bg);
     z-index: 1;
-    box-shadow: 0 4px 8px -2px gray;
+    box-shadow: var(--box-shadow);
 }
 
 .sidebar-item {
@@ -65,7 +76,7 @@ a {
 }
 
 .navbar {
-    box-shadow: 0 4px 20px -2px gray;
+    box-shadow: 0 4px 20px -2px var(--box-shadow);
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 2fr 1fr;
@@ -82,6 +93,7 @@ input {
     padding: .6em;
     background-color: var(--bar-background);
     margin-left: .5em;
+    color: var(--text-color);
 }
 
 .right-container {
@@ -96,10 +108,11 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2em;
+    font-size: 1.3rem;
 }
 
 .top-button {
-    background-color: var(--bar-background);
+    background-color: var(--sidebar-background);
     border: none;
     font-weight: bold;
     border-radius: 1em;
@@ -166,6 +179,7 @@ input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.1fr repeat(3, 1fr);
+    align-items: center;
 }
 
 .card {
@@ -174,10 +188,27 @@ input {
     grid-template-rows: 1fr 0.5fr;
     background-color: var(--background-color);
     border-radius: 1rem;
-    box-shadow: 0 4px 10px -2px gray;
+    box-shadow: 0 4px 10px -2px var(--box-shadow);
     width: 90%;
     height: 90%;
 }
+
+.card:nth-child(2) {
+    align-self: start;
+}
+
+.card:nth-child(3) {
+    align-self: start;
+}
+
+.card:nth-child(6) {
+    align-self: end;
+}
+
+.card:nth-child(7) {
+    align-self: end;
+}
+
 
 .card-color {
     background-color: var(--sidebar-background);
@@ -216,4 +247,67 @@ input {
 
 .card-icons>*:hover {
     cursor: pointer;
+}
+
+.panel-container {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr 0.1fr 1fr;
+}
+
+.announce-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: var(--background-color);
+    height: 80%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px -2px var(--box-shadow);
+}
+
+.trending-container {
+    background-color: var(--background-color);
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px -2px var(--box-shadow);
+    align-self: end;
+    display: grid;
+}
+
+.announce-container {
+    padding: 1rem;
+}
+
+.announce-title {
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.announce-text {
+    padding: 0;
+    margin: 0;
+    font-size: 0.6rem;
+}
+
+.user {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.user .bi {
+    font-size: 3rem;
+    grid-row: 1 / -1;
+    align-self: center;
+    justify-self: center;
+}
+
+.trending-username {
+    font-weight: bold;
+    align-self: end;
+}
+
+.line {
+    background-color: black;
 }
